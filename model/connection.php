@@ -3,9 +3,7 @@
         $dbuser = 'postgres';
         $dbpass = 'jisan';
         $dbhost = 'localhost';
-        $dbname='exchangeRate';
-
-        // public $connect;
+        $dbname = 'exchangeRate';
 
         try {
             $connect = new PDO("pgsql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
