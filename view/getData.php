@@ -1,8 +1,8 @@
 <?php
 echo "hello";
 
-include_once '../model/modelTest.php';
-// include_once '../model/GetRate.php';
+// include_once '../Model/modelTest.php';
+include_once '../Model/GetRate.php';
 
 
 header('Access-Control-Allow-Origin:*');
