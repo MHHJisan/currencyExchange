@@ -1,8 +1,7 @@
 <?php
-echo "hello";
 
 // include_once '../Model/modelTest.php';
-include_once '../Model/GetRate.php';
+include_once '../Model/getRate.php';
 
 
 header('Access-Control-Allow-Origin:*');
@@ -14,7 +13,7 @@ header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
-if($requestMethod === "GET"){
+if($requestMethod == "GET"){
 
     $src_currency = $_GET['source_currency'];
     $dest_currency = $_GET['destination_currency'];
