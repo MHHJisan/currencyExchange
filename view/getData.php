@@ -1,8 +1,6 @@
 <?php
 echo "hello";
 
-include 'testFile.php';
-
 include_once '../model/modelTest.php';
 // include_once '../model/GetRate.php';
 
@@ -17,14 +15,10 @@ header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 if($requestMethod === "GET"){
-    // && isset($_GET['action'])
-    // $action = $_GET['action'];
+
     $src_currency = $_GET['source_currency'];
-    echo $src_currency;
     $dest_currency = $_GET['destination_currency'];
-    echo $dest_currency;
     $rate = getRate($src_currency, $dest_currency);
-    echo $rate;
 
     $data = [
         'status'  => 200,
