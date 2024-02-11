@@ -1,0 +1,1 @@
+{"version":1,"defects":{"SetRateTest::testGetDestAmount":8,"SetRateTest::testGetRate":8},"times":{"SetRateTest::testGetDestAmount":0.027,"SetRateTest::testGetRate":0.007}}

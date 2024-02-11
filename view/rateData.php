@@ -4,17 +4,14 @@ header('Access-Control-Allow-Origin:*');
 header('Content-Type: application/json');
 header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Request-With');
 
-include './model/getAmount.php';
+include './Model/getAmount.php';
 
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 if($requestMethod == "GET"){
 
-    // && isset($_GET['action']
-    // $action = $_GET['action'];
-    // echo $action;
-    echo 1;
+    
     $src_currency = $_GET['source_currency'];
     echo $src_currency;
     $dest_currency = $_GET['destination_currency'];
@@ -24,12 +21,12 @@ if($requestMethod == "GET"){
 
     $amount = getDestAmount($src_currency, $dest_currency, $src_amount);
     
-    echo $amount;
+    // echo $amount[0];
 
     $data = [
         'status'  => 200,
         'message' => 'This is the exchange Rate for',
-        'rate'    => $rate
+        'rate'    => $amount[0]
     ];
     header("HTTP/1.0 200 OK");
     echo json_encode($data);
