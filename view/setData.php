@@ -12,7 +12,7 @@ $requestMethod = $_SERVER["REQUEST_METHOD"];
 if($requestMethod == "POST"){
     
     $input = json_decode(file_get_contents("php://input"), true);
-    echo json_encode($input['name']);
+    // echo json_encode($input['name']);
 
     $data = [
         'status'  => 200,

@@ -4,7 +4,7 @@ header('Access-Control-Allow-Origin:*');
 header('Content-Type: application/json');
 header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Request-With');
 
-include './Model/getAmount.php';
+include '../Model/getAmount.php';
 
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
@@ -13,11 +13,8 @@ if($requestMethod == "GET"){
 
     
     $src_currency = $_GET['source_currency'];
-    echo $src_currency;
     $dest_currency = $_GET['destination_currency'];
-    echo $dest_currency;
     $src_amount = $_GET['source_amount'];
-    echo $src_amount;
 
     $amount = getDestAmount($src_currency, $dest_currency, $src_amount);
     
