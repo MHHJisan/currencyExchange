@@ -9,14 +9,15 @@ include './model/getRate.php';
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
-if($requestMethod === "GET" && isset($_GET['action'])){
-    $action = $_GET['action'];
-    echo $action;
+if($requestMethod === "GET"){
+    // && isset($_GET['action'])
+    // $action = $_GET['action'];
+    // echo $action;
     $src_currency = $_GET['source_currency'];
-    echo $currency_from;
+    echo $src_currency;
     $dest_currency = $_GET['destination_currency'];
-    echo $currency_to;
-    $rate = getRate($currency_from, $currency_to);
+    echo $dest_currency;
+    $rate = getRate($src_currency, $dest_currency);
 
     $data = [
         'status'  => 200,

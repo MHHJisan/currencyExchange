@@ -1,13 +1,10 @@
 <?php
-
 include 'connection.php';
-
 
 // this method will return the exchange rate getting source and destinatin
 // as parmeters
 function getRate($source_currency, $destination_currency) {
 
-    echo "IN index page";
     echo $source_currency;
     echo $destination_currency;
 

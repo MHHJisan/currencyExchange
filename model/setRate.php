@@ -3,6 +3,7 @@ include 'connection.php';
 // class SetRate{
 
 //manually set the conversion rates, default exchange rates are set 
+
 function setRate(){
     $store_array = array("USD"=>1.0, "AED"=>3.67, "AUD"=>1.53,
                          "BDT"=>109.65, "CAD"=>1.35, "CHF"=>0.87,
