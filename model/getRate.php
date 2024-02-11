@@ -5,21 +5,14 @@ include 'connection.php';
 // as parmeters
 function getRate($source_currency, $destination_currency) {
 
-    echo $source_currency;
-    echo $destination_currency;
 
         $query = "SELECT rate FROM exchange_rates 
                  WHERE source_currency = '$source_currency' 
                  AND destination_currency = '$destination_currency'";
-        if($query){
-            echo "QUERY";
-        }
         $sql = $connect->query($query);
         
-        echo "TEST";
         $rate = $sql->fetch_assoc();
-        echo $rate[0];
-        echo $rate;
+        
         if ($rate !== false) {
             $data = [
                 'status'  => 405, 
