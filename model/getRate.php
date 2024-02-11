@@ -15,11 +15,7 @@ function getRate($source_currency, $destination_currency) {
             echo "QUERY";
         }
         $sql = $connect->query($query);
-        if($sql){
-            echo "SQL";
-        }else {
-            echo "NO SQL";
-        }
+        
         echo "TEST";
         $rate = $sql->fetch_assoc();
         echo $rate[0];
