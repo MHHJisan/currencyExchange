@@ -3,7 +3,7 @@ namespace App\Model;
 
 require_once 'connection.php';
 
-class CurrencyConverter {
+class SetRate {
     private $connection;
 
     public function __construct() {
