@@ -1,7 +1,7 @@
 <?php
-// namespace App;
 include_once 'GetRate.php';
-
+// namespace Model;
+// use Model\GetRate;
 Class GetAmount {
 
     public $rate;

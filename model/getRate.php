@@ -1,7 +1,8 @@
 <?php
 
 // include 'connection.php';
-// namespace App;
+// namespace Model;
+// include_once 'Connect.php';
 
 Class GetRate {
 
@@ -19,7 +20,7 @@ public function getRate($source_currency, $destination_currency) {
 
         $connect = new PDO("pgsql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
 
-
+        // $connect = new Connect();
         $query = "SELECT rate FROM exchange_rates 
                  WHERE source_currency = '$source_currency' 
                  AND destination_currency = '$destination_currency'";
