@@ -26,9 +26,9 @@ public function getRate($source_currency, $destination_currency) {
         $sql = $connect->query($query);
         
         // $rate = $sql->all();
-        $this->rate = $sql->fetch(PDO::FETCH_ASSOC);
+        $data = $sql->fetch(PDO::FETCH_ASSOC);
 
-        echo $this->rate;
+        $this->rate = $data['rate'];
         
         if ($this->rate != false) {
             
