@@ -47,7 +47,7 @@ class SetRateTest extends TestCase{
         $this->assertEquals('XYZ', $data['destination_currency'], "Incorrect destination currency");
         $this->assertEquals(12345.456, $data['rate'], "Incorrect rate");
 
-        // Clean up: Delete test data from the database
+        // deleting the test data from the database
         $delete_query = "DELETE FROM exchange_rates WHERE source_currency = 'ABC' 
                           AND destination_currency = 'XYZ' AND rate = 12345.456";
         $delete_sql = $connect->query($delete_query);
