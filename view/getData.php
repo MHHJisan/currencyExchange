@@ -1,7 +1,7 @@
 <?php
 
 // include_once '../Model/modelTest.php';
-include_once '../Model/getRate.php';
+include_once '../Model/GetRate.php';
 
 
 header('Access-Control-Allow-Origin:*');
@@ -17,7 +17,8 @@ if($requestMethod == "GET"){
 
     $src_currency = $_GET['source_currency'];
     $dest_currency = $_GET['destination_currency'];
-    $rate = getRate($src_currency, $dest_currency);
+    $getRate = new GetRate(); 
+    $rate = $getRate->getRate($src_currency, $dest_currency);
 
     $data = [
         'status'  => 200,

@@ -2,11 +2,13 @@
 
 // include 'connection.php';
 
+Class GetRate {
 
+    public $rate;
 
 // this method will return the exchange rate getting source and destinatin
 // as parmeters
-function getRate($source_currency, $destination_currency) {
+public function getRate($source_currency, $destination_currency) {
 
     $dbuser = 'postgres';
         $dbpass = 'jisan';
@@ -24,13 +26,13 @@ function getRate($source_currency, $destination_currency) {
         $sql = $connect->query($query);
         
         // $rate = $sql->all();
-        $rate = $sql->fetch(PDO::FETCH_ASSOC);
-        
-        if ($rate != false) {
+        $this->rate = $sql->fetch(PDO::FETCH_ASSOC);
 
+        echo $this->rate;
+        
+        if ($this->rate != false) {
             
         } else {
-            echo "rate";
             $data = [
                 'status'  => 405, 
                 'message' => $requestMethod.' Rate not found',
@@ -38,9 +40,10 @@ function getRate($source_currency, $destination_currency) {
             header("HTTP/1.0 Rate Not Found");
             echo json_encode($data);
         }
-        return $rate;
+
+        return $this->rate;
     
 } 
-
+}
 
 ?>
