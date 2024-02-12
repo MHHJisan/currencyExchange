@@ -1,11 +1,11 @@
 <?php
 include 'connection.php';
-// class SetRate{
+class SetRateAmount{
 
 //manually set the conversion rates, default exchange rates are set
 //can do it through any third party API calling also 
 
-function setRate(){
+public function setRate(){
     $store_array = array("USD"=>1.0, "AED"=>3.67, "AUD"=>1.53,
                          "BDT"=>109.65, "CAD"=>1.35, "CHF"=>0.87,
                          "CNY"=>7.18, "EUR"=>0.93, "FJD"=>2.24,
@@ -75,7 +75,7 @@ function setRate(){
 the current exchange rate for a source & destination which is already there
 or 
 wants to insert a new exchange for new source-destination combination */
-function setRate($source_Currency, $destination_Currency, $rate){
+public function setRateInsert($source_Currency, $destination_Currency, $rate){
 
 
     //check whether source-destination-rate is already exist there and same
@@ -129,7 +129,7 @@ function setRate($source_Currency, $destination_Currency, $rate){
     
 }
 
-// }
+}
 
 
 ?>

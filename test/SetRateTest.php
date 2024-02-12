@@ -1,6 +1,7 @@
 <?php
 include_once './Model/GetRate.php';
 include_once './Model/GetAmount.php';
+include_once './Model/SetRateAmount.php';
 
 use PHPUnit\Framework\TestCase;
 class SetRateTest extends TestCase{
@@ -31,9 +32,9 @@ class SetRateTest extends TestCase{
         $dbname = 'exchangeRate';
 
         $connect = new PDO("pgsql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
-        $test_query = "INSERT INTO exchange_rates (source_currency, destination_currency, rate)
-                 VALUES ('ABC', 'XYZ', 12345.456)";
-        $test_sql = $connect->query($test_query);
+
+        $test_setRate = new SetRateAmount();
+        $test_new_setRate = $test_setRate->setRateInsert('ABC','XYZ',12345.456);
 
         $query = "SELECT * FROM exchange_rates 
                  WHERE source_currency = 'ABC' 
@@ -51,6 +52,18 @@ class SetRateTest extends TestCase{
         $delete_query = "DELETE FROM exchange_rates WHERE source_currency = 'ABC' 
                           AND destination_currency = 'XYZ' AND rate = 12345.456";
         $delete_sql = $connect->query($delete_query);
+
+        $query = "SELECT * FROM exchange_rates 
+                 WHERE source_currency = 'USD' 
+                 AND destination_currency = 'BDT' AND rate = 109.650";
+        
+        $sql = $connect->query($query);
+
+        $data = $sql->fetch(PDO::FETCH_ASSOC);
+
+        $this->assertEquals('USD', $data['source_currency']);
+        $this->assertEquals('BDT', $data['destination_currency']);
+        $this->assertEquals(109.650, $data['rate']);
 
     }    
 }

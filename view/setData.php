@@ -4,7 +4,7 @@ header('Access-Control-Allow-Origin:*');
 header('Content-Type: application/json');
 header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Request-With');
 
-include './model/setRate.php';
+include './Model/SetRateAmount.php';
 
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
