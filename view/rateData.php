@@ -15,18 +15,15 @@ if($requestMethod == "GET"){
     $dest_currency = $_GET['destination_currency'];
     $src_amount = $_GET['source_amount'];
 
-    echo $src_amount;
     $getAmount = new GetAmount();
-    $amount = $getAmount->getDestAmount($src_currency, $dest_currency, $src_amount);
-    var_dump($amount);
-    echo $amount;
+    $dest_amount = $getAmount->getDestAmount($src_currency, $dest_currency, $src_amount);
     
-    // echo $amount[0];
 
     $data = [
         'status'  => 200,
         'message' => 'This is the exchange Rate for',
-        'rate'    => $amount["rate"]
+        'rate'    => $dest_amount[0],
+        'destination amount' => $dest_amount[1]
     ];
     header("HTTP/1.0 200 OK");
     echo json_encode($data);

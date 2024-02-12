@@ -1,10 +1,11 @@
 <?php
-
+// namespace App;
 include_once 'GetRate.php';
 
 Class GetAmount {
 
     public $rate;
+    public $destination_amount;
     
 
 // this method will returns an array of consisting rate & destination amount
@@ -14,11 +15,10 @@ public function getDestAmount($source_currency, $destination_currency, $source_a
     // $rate = getRate($source_currency, $destination_currency);
     $getRate = new GetRate(); 
     $this->rate = $getRate->getRate($source_currency, $destination_currency);
-    $destination_amount = $this->rate * $source_amount;
-    echo $destination_amount;
+    $this->destination_amount = $this->rate * $source_amount;
     // $array["rate"] = $this->rate;
     // $array["destination amount"] = $destination_amount;
-    return $this->rate;
+    return array($this->rate, $this->destination_amount);
 }
 
 }

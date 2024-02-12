@@ -1,8 +1,8 @@
 <?php
-use PHPUnit\Framework\TestCase;
+include_once './Model/GetRate.php';
+include_once './Model/GetAmount.php';
 
-include '../Model/GetRate.php';
-include '../Model/GetAmount.php';
+use PHPUnit\Framework\TestCase;
 class SetRateTest extends TestCase{
 
     function getRate() {

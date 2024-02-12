@@ -1,6 +1,7 @@
 <?php
 
 // include 'connection.php';
+// namespace App;
 
 Class GetRate {
 
